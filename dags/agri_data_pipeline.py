@@ -20,25 +20,25 @@ with DAG(
     # 1. simulate data
     simulate_data = BashOperator(
         task_id='simulate_data',
-        bash_command='python "/FULL/PATH/simulate_data.py"',
+        bash_command='python /opt/airflow/scripts/simulate_data.py',
     )
 
     # 2. extract to HDFS
     extract_to_hdfs = BashOperator(
         task_id='extract_to_hdfs',
-        bash_command='spark-submit "/FULL/PATH/extraction_to_hdfs.py"',
+        bash_command='spark-submit /opt/airflow/scripts/extraction_to_hdfs.py',
     )
 
     # 3. transform (gold layer)
     transform_data = BashOperator(
         task_id='transform_data',
-        bash_command='spark-submit "/FULL/PATH/transformation_spark.py"',
+        bash_command='spark-submit /opt/airflow/scripts/transformation_spark.py',
     )
 
     # 4. load to snowflake
     load_to_snowflake = BashOperator(
         task_id='load_to_snowflake',
-        bash_command='spark-submit "/FULL/PATH/load_to_snowflake.py"',
+        bash_command='spark-submit /opt/airflow/scripts/load_to_snowflake.py',
     )
 
     simulate_data >> extract_to_hdfs >> transform_data >> load_to_snowflake
