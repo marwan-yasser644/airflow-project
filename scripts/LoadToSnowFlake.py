@@ -9,14 +9,13 @@ spark = SparkSession.builder \
     .config("spark.hadoop.fs.defaultFS", "hdfs://hadoop-namenode:9000") \
     .config("spark.jars.packages", "net.snowflake:spark-snowflake_2.12:2.12.0-spark_3.3,net.snowflake:snowflake-jdbc:3.13.22") \
     .getOrCreate()
-
 sf_options = {
-    "sfURL": "LLYHYMM-YJ95431.snowflakecomputing.com",
-    "sfUser": "YOURUSERNAME", 
-    "sfPassword": "YOURPASSWORD", 
-    "sfDatabase": "AGRI_DATA_DB",
-    "sfSchema": "GOLD_LAYER",
-    "sfWarehouse": "AGRI_WH"
+    "sfURL": "uu48624.eu-central-2.aws.snowflakecomputing.com", # المعرف الصح بتاعك
+    "sfUser": "marwan yassser", 
+    "sfPassword": "Marwan_Mero_22", 
+    "sfDatabase": "OLIST_DB", # تأكد من اسم الداتابيز اللي عملناها في Snowflake
+    "sfSchema": "BRONZE_LAYER", # أو GOLD_LAYER لو عملتها هناك
+    "sfWarehouse": "OLIST_WH"  # المخزن اللي كريتناه
 }
 
 GOLD_BASE_PATH = "hdfs://hadoop-namenode:9000/user/root/datalake/gold/"

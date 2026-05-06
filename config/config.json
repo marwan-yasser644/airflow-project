@@ -1,0 +1,11 @@
+{
+  "snowflake": {
+    "user": "marwan yassser",
+    "password": "Marwan_Mero_22",
+    "account": "uu48624.eu-central-2.aws",
+    "warehouse": "OLIST_WH",
+    "database": "OLIST_DB",
+    "schema": "BRONZE_LAYER",
+    "role": "ACCOUNTADMIN"
+  }
+}
